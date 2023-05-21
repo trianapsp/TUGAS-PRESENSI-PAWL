@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PRESENSI MAHASISWA</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">PRESENSI</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard-mhs">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/presensi-mhs">
+                    <i class="fab fa-wpforms"></i>
+                    <span>Presensi</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/data-matkul">
+                    <i class="fas fa-table"></i>
+                    <span>Data Mata Kuliah</span>
+                </a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/data-dosen">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Data Dosen</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+        </ul>
+        <!-- End of Sidebar -->
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ session['nama'] }}</span>
+                                <img class="img-profile rounded-circle"
+                                    src="{{ url_for('static', filename='user.png')}}">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/dashboard-mhs">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          
+            <h2 class="mb-5 text-gray-800">PRESENSI MAHASISWA</h2>
+            <div class="row">
+              <!-- Collapsable Card Example -->
+                <div class="col-md-4 animated--fade-in">
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#absen" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="absen">
+                      <h6 class="m-0 font-weight-bold text-primary">Data Mahasiswa</h6>
+                    </a>
+                    <!-- Card Content - Collapse -->
+                    <div class="card-body">
+                        <p>NIM &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp; : {{ session['nim']}} </p>
+                        <p>Nama &emsp;&emsp;&emsp;&emsp; :  {{ session['nama'] }} </p>
+                        <p>Program Studi &nbsp; :  {{ session['Prodi'] }} </p>
+                        <p>Semester &emsp;&emsp;&ensp; :  {{ session['Semester'] }}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+            <!-- Collapsable Card Example -->
+                <div class="col-md-4 animated--fade-in">
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Accordion -->
+                    <a href="#absen" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="absen">
+                      <h6 class="m-0 font-weight-bold text-primary">Pengisian Presensi Mahasiswa</h6>
+                    </a>
+                    <!-- Card Content - Collapse -->
+                    <div class="" id="absen">
+                    <div class="card-body">
+                    <form role="form" action="{{ url_for('presensi')}}" method="post">
+
+                    <div class="form-group">
+                      <label for="nama_mk">Mata Kuliah</label>
+                        <select name="nama_mk" class="form-control">
+                            <option value="Arsitektur & Sistem Enterprise">Arsitektur & Sistem Enterprise</option>
+                            <option value="Arsitektur Komputer & Sistem Operasi">Arsitektur Komputer & Sistem Operasi</option>
+                            <option value="Pemrograman Basis Data">Pemrograman Basis Data</option>
+                            <option value="Pengantar Statistika & Ilmu Data">Pengantar Statistika & Ilmu Data</option>
+                            <option value="Pengembangan Aplikasi Web Lanjut">Pengembangan Aplikasi Web Lanjut</option>
+                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jadwal">Jadwal</label>
+                          <select name="jadwal" class="form-control">
+                              <option value="Minggu 1">Minggu 1</option>
+                              <option value="Minggu 2">Minggu 2</option>
+                              <option value="Minggu 3">Minggu 3</option>
+                              <option value="Minggu 4">Minggu 4</option>
+                              <option value="Minggu 5">Minggu 5</option>
+                              <option value="Minggu 6">Minggu 6</option>
+                              <option value="Minggu 7">Minggu 7</option>
+                              <option value="Minggu 8">Minggu 8</option>
+                              <option value="Minggu 9">Minggu 9</option>
+                              <option value="Minggu 10">Minggu 10</option>
+                              <option value="Minggu 11">Minggu 11</option>
+                              <option value="Minggu 12">Minggu 12</option>
+                              <option value="Minggu 13">Minggu 13</option>
+                              <option value="Minggu 14">Minggu 14</option>
+                              <option value="Minggu 15">Minggu 15</option>
+                              <option value="Minggu 16">Minggu 16</option>
+                              <option value="Minggu 17">Minggu 17</option>
+                          </select>
+                      </div>
+
+                    <div class="form-group">
+                      <label for="tgl">Tanggal</label>
+                      <input type="date" class="form-control" name="tgl"/>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="jam">Jam</label>
+                      <input type="time" class="form-control" name="jam"/>
+                    </div>
+  
+                    <div class="form-group">
+                        <label for="status" class="form-check-label">Status Presensi</label><br/>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Hadir" name="isi" value="Hadir" checked />
+                            <label class="form-check-label" for="Hadir">Hadir</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Izin" name="isi" value="Izin" checked />
+                            <label class="form-check-label" for="Izin">Izin</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Sakit" name="isi" value="Sakit" checked />
+                            <label class="form-check-label" for="Sakit">Sakit</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Alpa" name="isi" value="Alpa" checked />
+                            <label class="form-check-label" for="Alpa">Alpa</label>
+                        </div>
+                    </div>
+  
+                    <p><input type="submit" value="Simpan"></p>
+                    </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+            <!-- /.container-fluid -->
+    
+            </div>
+            <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2023</span>
+                </div>
+            </div>
+        </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/static/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/static/js/demo/chart-area-demo.js"></script>
+    <script src="/static/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

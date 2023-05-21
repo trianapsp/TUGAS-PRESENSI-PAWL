@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESENSI MAHASISWA</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style3.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <!--Navigasi -->
+    <nav>
+        <ul>
+            <!--logo-->
+            <!-- <li class="img"><a href="#"><img src="img/1.png" alt="" width="90px"></a></li> -->
+            <li class="img"><a href="#"><img src="{{url_for('static', filename='logo.png')}}" alt="Gambar" width="70px" ></a></li>
+            <li class="logo">PRESENSI</li>
+            <!-- Class Menu Items-->
+            <div class="items">
+                <li><a href="#home">Home</a></li>
+                <div class="dropdown">
+                    <li><a href="#login" class="dropbtn"> Login &nbsp; <i class="fas fa-caret-down" style="color:'black !important'"></i></a></li>
+                    <div class="dropdown-content">
+                        <a href="{{url_for('/mahasiswa')}}">Mahasiswa</a>
+                        <a href="{{url_for('/dosen')}}">Dosen</a>
+                    </div>
+                </div>
+                <!-- <li><a href="#contact">Contact Us</a></li> -->
+            </div>
+        
+            <!--Search-icon box-->
+            <li class="search-icon">
+                <input type="text" placeholder="Search">
+                <label class="icon">
+                    <span class="fas fa-search"></span>
+                </label>
+            </li>
+        </ul>
+    </nav>    
+    <!-- Halaman Slide Show-->
+    <div class="slide">
+        <div class="slide1">
+            <img src="/static/2.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Halaman Untuk Menu Home
+    Konten Kata Sambutan, foto kepala sekolah -->
+    <section id="home">
+        <div class="sambutan">
+            <br><br><br><br>
+            <h1>Selamat Datang di Aplikasi Presensi Online</h1>
+            <p>
+                Aplikasi Presensi online memberikan kemudahan untuk Anda agar dapat memonitor dan mengelola presensi kehadiran setiap mahasiswa dengan cepat dan akurat, selama menjalankan proses belajar  mengajar. Pengguna aplikasi adalah mahasiswa dan dosen.
+                <br>
+                Silakan mulai mengakses aplikasi presensi dengan memasukan username dan password untuk login ke dalam aplikasi.
+            </p> 
+        </div> 
+    </section>
+
+     <!--Halaman Untuk Menu Contact Us-->
+    <!-- <section id="contact"> -->
+    <!-- <div class="wrapper"> -->
+        <!-- <h1 class="text-center">Contact Us</h1> -->
+        <!-- <p class="text-center">Silahkan isi form berikut jika ada saran & Kritik </p>
+    <form action="" method="post">
+      <div>
+          <input type="text" name="" required="" placeholder="Masukkan Nama Anda">
+      </div>
+
+      <div>
+        <input type="email" name="" required="" placeholder="Masukkan E-mail Anda">
+     </div>
+     <div>
+        <textarea required="" placeholder="Pesan"></textarea>
+     </div>
+     <input type="submit" name=""  value="Submit">
+    </form>
+    </div>
+    </section> -->
+    <!--Footer-->
+    <footer>
+        <div class="footer-content">
+            <h3>PRESENSI</h3>
+            <p>Aplikasi Presensi Berbasis Online</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2023 Aplikasi Presensi. designed by Kelompok 7 Prodi Sistem Informasi 2021</p>
+        </div>
+    </footer>
+</body>
+</html>

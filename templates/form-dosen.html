@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Login Mahasiswa</title>
+    <link rel="stylesheet" href="static/css/style1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <form method="post">
+                <h2>LOGIN DOSEN</h2>
+                <hr>
+                {{ form.uname.label }}
+                {{ form.uname() }}
+                {{ form.password.label }}
+                {{ form.password() }}
+                <p>{{ form.submit() }}</p>
+            </form>
+        </div>
+        <div class="right">
+            <img src="{{url_for('static', filename='login.jpg')}}" alt="Gambar">
+        </div>
+    </div>
+</body>
+</html>
